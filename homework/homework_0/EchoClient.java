@@ -11,6 +11,7 @@ public class EchoClient{
         System.exit(1);
     }
 
+    //initialize variables
     Socket socket = null;
     PrintWriter outWriter = null;
     BufferedReader inReader = null;
@@ -18,6 +19,7 @@ public class EchoClient{
 
     try{
 
+      //get host name and port number from commmand line
       String host_name = args[0];
       int port_no = Integer.parseInt(args[1]);
 
@@ -31,7 +33,8 @@ public class EchoClient{
       //build I/O to read from user on prompt
       stdInReader = new BufferedReader(new InputStreamReader(System.in));
 
-      String userIn; //manage user inputs
+      //manage user inputs
+      String userIn;
 
       //continuusly get user input
       while((userIn = stdInReader.readLine()) != null){
@@ -48,11 +51,10 @@ public class EchoClient{
     } catch(IOException ioe){ //some I/O exception may occur for some reason...
       ioe.printStackTrace();
       System.exit(1);
-    } catch (NumberFormatException nfe){
+    } catch (NumberFormatException nfe){ //User entered in something that's not a number
       nfe.printStackTrace();
       System.exit(1);
-    } finally {
-      //close everything once done
+    } finally { //close everything once done
       if(socket != null) socket.close();
       if(outWriter != null) outWriter.close();
       if(inReader != null) inReader.close();
