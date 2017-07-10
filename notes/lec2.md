@@ -1,5 +1,7 @@
 # Lecture 2, 06/28/17
 
+## LAST UPDATED: 06/28/17 06:24:48
+
 ## Host
  * anything that hooks up to the internet
  * endpoint in a network
@@ -37,6 +39,15 @@
 ## TCP vs. UDP - Transport (Message Transmission)
   * TCP provides many functionality
   * UDP provides ports (not so exciting)
+  * TCP is more reliable but UDP is faster (tradeoffs)
+  * UDP is connectionless as opposed to TCP
+  * SSH (bash, cmd, etc.) is part of the Application layer and must be built using TCP
+  * Keep the following in mind:
+	  1. Reliability
+	  2. Header Size
+	  3. Lost/Unsuccessful Communication
+	  4. Flow Control
+	  5. Congestion Control
 
 ## Exponential Math
     | Unit | Value     |
