@@ -92,12 +92,12 @@ Extension| Kind of Document| MIME Type |
 		* t0: time it takes to send one packet = (h+d)/B  
 		* B: bandwidth (bits/sec)
 		* S: no. of stations (hops) going through
-		* P: number of packets to send = ⌈M/d⌉
+		* P: number of packets to send = ⌈M/d⌉  
 		![circuit](/notes/img/packet_switch.gif)
 	* Message Switching: **t = t<sub>0</sub> * (1 + S)**
 		* h: header size
 		* t0: time it takes to send one message = (h+M)/B
 		* M: message size (bits)
 		* B: bandwidth (bits/sec)
-		* S: no. of stations (hops) going through
+		* S: no. of stations (hops) going through  
 		![circuit](/notes/img/message_switch.gif)
