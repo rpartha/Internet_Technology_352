@@ -47,9 +47,10 @@
 ![architectures](/notes/img/architecture_comparison.PNG)
 
 ## HTTP 1.0
-###Response Codes
+###Response Codes  
+
 Status Code| Response| Meaning |
-:---------:|:--------:|:--------:|
+:--:|:---:|:--:|
 200  | OK | 						 &nbsp;Success
 304  | Not Modified | Redirection
 400  | Bad Request | Client error
@@ -63,18 +64,18 @@ Status Code| Response| Meaning |
 505  | HTTP Version Not Supported | Server error  
 
 
-###MIME Types
+###MIME Types  
+
 Extension| Kind of Document| MIME Type |
-:---------:|:--------:|:--------:|
-.txt  | default text file | text/plain
-.htm, .html  | HTML | text/html
-.*  | default for all other file types | application/octet-stream
-.gif  | GIF | image/gif
-.jpg  | JPEG Images |image/jpeg
-.*  | Basic Audio Files | audio/basic
-.mpeg | MPEG Video | video/mpeg
-- | - | message
--  | - | multi-part
+:--:            |:---:|:--:|
+.txt             | default text file | text/plain
+. htm, . html   | HTML | text/html
+. *             | default for all other file types | application/octet-stream
+. gif           | GIF | image/gif
+. jpg           | JPEG Images |image/jpeg
+. *             | Basic Audio Files | audio/basic
+.mpeg           | MPEG Video | video/mpeg
+
 
 ##Delay and Transport (with Calculations)
 * Processing, Queueing, Transmission, and Propagation Delays are as defined in the definitions section
