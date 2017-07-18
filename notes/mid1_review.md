@@ -1,7 +1,7 @@
 # CS 352: Internet Technology- Midterm 07/19
 
 ## Exam Content  
-**The exam has been partitioned into 6 sections totaling 114 pts: **
+**The exam has been partitioned into 6 sections totaling 114 pts:**
 
 0. <span style = "color:red">Internetworking ~ 24 pts</span>
 1. <span style = "color:red">TCP Details ~ 20 pts</span>
