@@ -1,7 +1,8 @@
 # CS 352: Internet Technology- Midterm 07/19
 
-##Exam Content  
-**The exam has been partitioned into 6 sections totaling 114 pts**
+## Exam Content  
+**The exam has been partitioned into 6 sections totaling 114 pts: **
+
 0. <span style = "color:red">Internetworking ~ 24 pts</span>
 1. <span style = "color:red">TCP Details ~ 20 pts</span>
 2. <span style = "color:red">Delay and Transport ~ 20 pts</span>
@@ -64,7 +65,7 @@ Status Code| Response| Meaning |
 505  | HTTP Version Not Supported | Server error  
 
 
-###MIME Types  
+### MIME Types  
 **HTTP 1.0 also supports multi-parts and messages**
 Extension| Kind of Document| MIME Type |
 :--:            |:---:|:--:|
@@ -103,21 +104,26 @@ Extension| Kind of Document| MIME Type |
 		* S: no. of stations (hops) going through  
 		![circuit](/notes/img/message_switch.gif)
 
-##Useful Comparisons
-###TCP vs. UDP
-|       PRO/CON    | TCP  | UDP |
-:-:                | :--: |:--: |
-connectionless     |   -  |  X  |
-faster             |   -  | X   |
-more reliable      |	 X  |  -  |
-provides ports     |	-		|  X  |
-more functionality |	X	  |  -  |
-###HTTP vs. FTP vs. SMTP
-|           FEATURE       | HTTP           | FTP | SMTP |
-:-:                       |:--:            |:---:|:--:  |
-request/response protocol | X              | X   | X
-connection semantics      | -              | X   | X    |
-###Circuit vs. Packet vs. Message Switching
+## Useful Comparisons 
+
+### TCP vs. UDP  
+
+|       PRO/CON    | TCP  | UDP |  
+:-:                | :--: |:--: |  
+connectionless     |   -  |  X  |  
+faster             |   -  | X   |  
+more reliable      |   X  |  -  |  
+provides ports     |	- |  X  |  
+more functionality |	X |  -  |     
+
+###HTTP vs. FTP vs. SMTP  
+
+|           FEATURE       | HTTP           | FTP | SMTP |  
+:-:                       |:--:            |:---:|:--:  |  
+request/response protocol | X              | X   | X    |  
+connection semantics      | -              | X   | X    |  
+
+### Circuit vs. Packet vs. Message Switching  
 * **Header Overhead**: Circuit < Packet < Message
 * **Transmission Delay**:
 	* **_Short, Bursty Messages_**: Packet < Message < Circuit
