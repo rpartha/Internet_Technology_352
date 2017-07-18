@@ -1,0 +1,77 @@
+# Midterm 1, 07/19/17
+## Updated: 07/17/17 09:20:46 PM
+
+- Up to (at least) TCP/UDP Part 1
+- Transport Layer not to be stressed (mostly ignore)
+- Vocabulary & Terms
+- Organization (ISO-OSI Stack, Client/Server, P2P, Circuit/Packet/Message)
+- Project
+	- HTTP Protocol
+	- HEAD, POST, GET
+		- GET variables appear in URL
+		- POST variables appear in req body
+	- Error codes/what they represent
+	- Socket implementation
+- Content + Qualitative (use, better/worse)
+
+TOPICS:
+- internetworking
+- tcp details
+- delay and transport
+- transport calc
+- http protocol
+- extra (credit)
+
+-----------------------------------------------------------------------------
+- base: definitions
+- comparative/slotting: operational semantics
+- mastery/optimization: good or bad idea? How does X affect Y?
+
+-----------------------------------------------------------------------------
+HTTP: Hypertext Transfer Protocol
+ FTP: File Transfer Protocol
+SMTP: Simple Mail Transfer Protocol
+
+notes:
+ - all of the above are request/response protocols
+ - SMTP, FTP both have connection semantics (send messages to/receive message from the server)
+ - HTTP does not have connection semantics
+-----------------------------------------------------------------------------------
+Flow-control: how much the user can handle vs. Congestion-control: how much the network can handle (TCP services)
+
+Network:
+Nodal Delay =
+	  Proc. Delay 	delay in computing on protocol (checksum, figure out who to relay to, etc.)
+	+ Queue Delay   delay in sending out data (waiting because media is busy)
+	+ Trans. Delay  delay in getting data on to the medium (since it's not instantaneous)
+	+ Prop Delay    delay in information to propagate through the medium (perhaps negligible or not)
+
+Transport:
+Circuit
+C: connection setup time (secs)
+M: message size (bits)
+B: bandwidth (bits/sec)
+
+t = C + M/B (time to transfer data using Circuit Switching)
+
+Packet
+h: header size
+d: packet data size (payload)
+t0: time it takes to send one packet = (h+d)/B
+M: message size (bits)
+B: bandwidth (bits/sec)
+S: no. of stations (hops) going through
+P: number of packets to send = ceil(M/d)
+
+t = t0 * (P + S)
+
+Message^
+h: header size
+t0: time it takes to send one message = (h+M)/B
+M: message size (bits)
+B: bandwidth (bits/sec)
+S: no. of stations (hops) going through
+
+t = t0 * (1 + S) //at least once from src to dest plus number of stops in-between
+
+^ really just the same as packet switching where the packet data size is the same as the message size
