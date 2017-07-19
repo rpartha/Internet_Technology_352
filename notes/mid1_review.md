@@ -38,6 +38,7 @@
 * **Client-Server Architecture**: An always-on *host* accepts service requests from incoming *clients*, but the clients do not directly communicate with each other
 * **P2P Architecture**: The application exploits direct communication between intermittently connected hosts, or *peers*, without passing through a dedicated server
 * **Socket**: The interface between your application and the network; one of the endpoints in a two-way communication link between two programs running on the network
+* **Round-Trip Time (RTT)**: Amount of time for a small packet to travel to the server and back; Response Time = 2RTT + FTT
 
 ## ISO-OSI Seven-Layer Stack
 ![stack](/notes/img/osi_summary.gif)
@@ -118,6 +119,7 @@ more functionality      |	 X   |  -  |
 point-to-point          |   X  |  -  |
 flow/congestion control |  X   |  -  |
 light weight/less header|  -   |  X  |
+in-order packet delivery|  X   |  -  |
 
 ### HTTP vs. FTP vs. SMTP  
 
@@ -158,6 +160,7 @@ connection semantics      | -              | X   | X    |
 * Flow Control
 	* How much the user can handle
 	* Makes sure sender does not overload receiver by sending only enough data to accommodate receiver
+	* Allows for more efficient bi-directional communication
 	* Initiated by sender
 * Congestion Control
 	* How much the network can handle
