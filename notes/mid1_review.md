@@ -117,7 +117,7 @@ provides ports          |	 -   |  X  |
 more functionality      |	 X   |  -  |
 point-to-point          |   X  |  -  |
 flow/congestion control |  X   |  -  |
-light weight/less header            |  -   |  X  |
+light weight/less header|  -   |  X  |
 
 ### HTTP vs. FTP vs. SMTP  
 
