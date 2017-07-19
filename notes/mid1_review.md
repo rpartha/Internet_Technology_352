@@ -120,18 +120,18 @@ Extension| Kind of Document| MIME Type |
 
 ### TCP vs. UDP  
 
-|       PRO/CON         | TCP  | UDP |  
-:-:                     | :--: |:--: |  
-connectionless          |   -  |  X  |  
-faster                  |   -  |  X  |  
-more reliable           |   X  |  -  |  
-provides ports          |	 -   |  X  |  
-more functionality      |	 X   |  -  |
-point-to-point          |   X  |  -  |
-flow/congestion control |  X   |  -  |
-light weight/less header|  -   |  X  |
-in-order packet delivery|  X   |  -  |
-higher thruput<sup>+</sup>| - | X |
+|       PRO/CON            | TCP  | UDP |  
+|:-:                       | :--: |:--: |  
+|connectionless            |   -  |  X  |  
+|faster                    |   -  |  X  |  
+|more reliable             |   X  |  -  |  
+|provides ports            |	 -  |  X  |  
+|more functionality        |	 X  |  -  |
+|point-to-point            |   X  |  -  |
+|flow/congestion control   |  X   |  -  |
+|light weight/less header  |  -   |  X  |
+|in-order packet delivery  |  X   |  -  |
+|higher thruput<sup>+</sup>| -    | X   |
 
 <sup><sup>+</sup> UDP packets are easier to process, esp. the source</sup>
 
