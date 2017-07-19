@@ -174,11 +174,13 @@ connection semantics      | -              | X   | X    |
 
 ## Exponential Math
   **Tip: 2^5 = 32 && 2^10 = 1024**
+  
+|Unit      |Value|
+|:--------:|:---:|
+KB  |  2<sup>10</sup>
+MB  |  2<sup>20</sup>
+GB  |  2<sup>30</sup>
+TB  |  2<sup>40</sup>
+PB  |  2<sup>50</sup>
 
-    | Unit | Value          |
-    | :--: | :-------:      |
-    | KB   | 2^10           |
-    | MB   | 2^20 = (2^10)^2|
-    | GB   | 2^30           |
-    | TB   | 2^40           |
-    | PB   | 2^50           |
+  
