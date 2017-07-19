@@ -39,6 +39,7 @@
 * **P2P Architecture**: The application exploits direct communication between intermittently connected hosts, or *peers*, without passing through a dedicated server
 * **Socket**: The interface between your application and the network; one of the endpoints in a two-way communication link between two programs running on the network
 * **Round-Trip Time (RTT)**: Amount of time for a small packet to travel to the server and back; Response Time = 2RTT + FTT
+* **Maximum Segment Size (MSS)**: The maximum amount of data that can be grabbed and placed in a segment
 
 ## ISO-OSI Seven-Layer Stack
 ![stack](/notes/img/osi_summary.gif)
