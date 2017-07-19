@@ -41,13 +41,17 @@
 * **Round-Trip Time (RTT)**: Amount of time for a small packet to travel to the server and back; Response Time = 2RTT + FTT
 * **Maximum Segment Size (MSS)**: The maximum amount of data that can be grabbed and placed in a segment
 
+<br></br>
+
 ## ISO-OSI Seven-Layer Stack
 ![stack](/notes/img/osi_summary.gif)
 
 ![encaps-decaps](/notes/img/encap_decap_osi.jpg)
 
 ## Client-Server vs. P2P
-![architectures](/notes/img/architecture_comparison.PNG)
+<img src  = "/notes/img/architecture_comparison.PNG" style = "width: 500px;"/>
+
+<br></br>
 
 ## HTTP 1.0
 ### Response Codes  
@@ -66,7 +70,6 @@ Status Code| Response| Meaning |
 503  | Service Unavailable | Server error
 505  | HTTP Version Not Supported | Server error  
 
-
 ### MIME Types  
 **HTTP 1.0 also supports multi-parts and messages**
 
@@ -80,6 +83,11 @@ Extension| Kind of Document| MIME Type |
 . *             | Basic Audio Files | audio/basic
 .mpeg           | MPEG Video | video/mpeg
 
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
 
 ## Delay and Transport (with Calculations)
 * Processing, Queueing, Transmission, and Propagation Delays are as defined in the definitions section
@@ -98,7 +106,8 @@ Extension| Kind of Document| MIME Type |
 		* B: bandwidth (bits/sec)
 		* S: no. of stations (hops) going through
 		* P: number of packets to send = ⌈M/d⌉  
-		![circuit](/notes/img/packet_switch.gif)
+		<img src = "/notes/img/packet_switch.gif" style = "width: 300px"/>
+		<br></br>
 	* Message Switching: **t = t<sub>0</sub> * (1 + S)**
 		* h: header size
 		* t0: time it takes to send one message = (h+M)/B
@@ -126,12 +135,17 @@ higher thruput<sup>+</sup>| - | X |
 
 <sup><sup>+</sup> UDP packets are easier to process, esp. the source</sup>
 
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
 ### HTTP vs. FTP vs. SMTP  
 
 |           FEATURE       | HTTP           | FTP | SMTP |  
-:-:                       |:--:            |:---:|:--:  |  
-request/response protocol | X              | X   | X    |  
-connection semantics      | -              | X   | X    |  
+|:-:                      |:--:            |:---:|:--:  |  
+|request/response protocol| X              | X   | X    |  
+|connection semantics     | -              | X   | X    |  
 
 ### Circuit vs. Packet vs. Message Switching  
 * **Header Overhead**: Circuit (best) < Packet < Message (worst)
@@ -146,9 +160,11 @@ connection semantics      | -              | X   | X    |
 * The *Go-Back-N (GBN)*  
 	* Allows the sender to transmit multiple available packets  without waiting for an acknowledgement but is constrained to have a maximum of *N* unacknowledged packets in the pipeline
 	* *N* represents the window size  
-![go-back-N](/notes/img/go_back_n.jpe)  
+<img src = "/notes/img/go_back_n.jpe" width = "320px"/>
 
-![go-back-N-operative](/notes/img/gbn_operative.PNG)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "/notes/img/gbn_operative.PNG" width = "340px"/>
+
+<br></br>
 
 * The *Selective Repeat (SR)*  
 	* Avoids unnecessary retransmissions by having the sender retransmit only those that it suspects were lost or corrupted at the receiver
@@ -159,7 +175,9 @@ connection semantics      | -              | X   | X    |
 	* No synchronization between sender and receiver
 ![selected-repeat-1](/notes/img/selective_repeate_view.png)  
 
-![selected-repeat-2](/notes/img/SR_operative.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src = "/notes/img/SR_operative.PNG" width = "500px"/>
+
+<br></br>
 
 ## Flow Control vs. Congestion Control
 * Flow Control
@@ -175,13 +193,11 @@ connection semantics      | -              | X   | X    |
 
 ## Exponential Math
   **Tip: 2^5 = 32 && 2^10 = 1024**
-  
+
 |Unit      |Value|
 |:--------:|:---:|
-KB  |  2<sup>10</sup>
-MB  |  2<sup>20</sup>
-GB  |  2<sup>30</sup>
-TB  |  2<sup>40</sup>
-PB  |  2<sup>50</sup>
-
-  
+|KB        |  2<sup>10</sup>|
+|  MB      |  2<sup>20</sup>|
+|  GB      |  2<sup>30</sup>|
+|  TB      |  2<sup>40</sup>|
+|  PB      |  2<sup>50</sup>|
