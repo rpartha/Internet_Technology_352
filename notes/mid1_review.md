@@ -120,6 +120,9 @@ point-to-point          |   X  |  -  |
 flow/congestion control |  X   |  -  |
 light weight/less header|  -   |  X  |
 in-order packet delivery|  X   |  -  |
+higher thruput<sup>+</sup>| - | X |
+
+<sup><sup>+</sup> UDP packets are easier to process, esp. the source</sup>
 
 ### HTTP vs. FTP vs. SMTP  
 
