@@ -17,7 +17,7 @@
 * **Channel**: *Logical* line of communication
 * **Medium**: Physical process used (e.g. fiber optics, copper wire, satellite link)
 * **Network Core**: The mesh of packet switches and links that interconnect the Internet's end systems
-* **EDGE Network**:
+* **EDGE Network**: A network which provides for the main or CORE network; companies and organizations with a default route
 * **CORE Network**: ISP tiers with the biggest ISPs in tier 1 and smaller, regional ISPs in tiers 2, 3
 * **Protocol**: Defines the format and the order of messages exchanged between two or more communicating entities, as well as he actions taken on he transmission and/or receipt of a message or other event
 * **Packets**: Smaller chunks of data broken off from longer "messages"
@@ -48,7 +48,7 @@
 ![architectures](/notes/img/architecture_comparison.PNG)
 
 ## HTTP 1.0
-###Response Codes  
+### Response Codes  
 
 Status Code| Response| Meaning |
 :--:|:---:|:--:|
@@ -78,14 +78,14 @@ Extension| Kind of Document| MIME Type |
 .mpeg           | MPEG Video | video/mpeg
 
 
-##Delay and Transport (with Calculations)
+## Delay and Transport (with Calculations)
 * Processing, Queueing, Transmission, and Propagation Delays are as defined in the definitions section
 * Network: *d*<sub>nodal</sub> = *d*<sub>proc</sub> + *d*<sub>queue</sub> + *d*<sub>trans</sub> + *d*<sub>prop</sub>
 * Transport  
 	![nodes](/notes/img/switching_node.gif)
 	* Circuit Switching: **t = C + M/B**  
 		* C: connection setup time (secs)  
-		* M: message size (bits)  = packet data size + header size
+		* M: message size (bits)
 		* B: bandwidth (bits/sec)  
 		![circuit](/notes/img/circuit_switch.gif)
 	* Packet Switching: **t = t<sub>0</sub> * (P + S)**  
@@ -104,19 +104,22 @@ Extension| Kind of Document| MIME Type |
 		* S: no. of stations (hops) going through  
 		![circuit](/notes/img/message_switch.gif)
 
-## Useful Comparisons 
+## Useful Comparisons
 
 ### TCP vs. UDP  
 
-|       PRO/CON    | TCP  | UDP |  
-:-:                | :--: |:--: |  
-connectionless     |   -  |  X  |  
-faster             |   -  | X   |  
-more reliable      |   X  |  -  |  
-provides ports     |	- |  X  |  
-more functionality |	X |  -  |     
+|       PRO/CON         | TCP  | UDP |  
+:-:                     | :--: |:--: |  
+connectionless          |   -  |  X  |  
+faster                  |   -  |  X  |  
+more reliable           |   X  |  -  |  
+provides ports          |	 -   |  X  |  
+more functionality      |	 X   |  -  |
+point-to-point          |   X  |  -  |
+flow/congestion control |  X   |  -  |
+light weight/less header            |  -   |  X  |
 
-###HTTP vs. FTP vs. SMTP  
+### HTTP vs. FTP vs. SMTP  
 
 |           FEATURE       | HTTP           | FTP | SMTP |  
 :-:                       |:--:            |:---:|:--:  |  
@@ -124,10 +127,51 @@ request/response protocol | X              | X   | X    |
 connection semantics      | -              | X   | X    |  
 
 ### Circuit vs. Packet vs. Message Switching  
-* **Header Overhead**: Circuit < Packet < Message
+* **Header Overhead**: Circuit (best) < Packet < Message (worst)
 * **Transmission Delay**:
-	* **_Short, Bursty Messages_**: Packet < Message < Circuit
-	* **_Long, Continuous Messages_**: Circuit < Message < Packet
+	* **_Short, Bursty Messages_**: Packet (best) < Message < Circuit (worst)
+	* **_Long, Continuous Messages_**: Circuit (best) < Message < Packet (worst)
 * Circuit vs. Packet
 	* Still (TDM, FDM) vs. Statistical Multiplexing
 	* Less vs. More Users
+
+### Go-Back-N vs. Selective Repeat Protocols
+* The *Go-Back-N (GBN)*  
+	* Allows the sender to transmit multiple available packets  without waiting for an acknowledgement but is constrained to have a maximum of *N* unacknowledged packets in the pipeline
+	* *N* represents the window size  
+![go-back-N](/notes/img/go_back_n.jpe)  
+
+![go-back-N-operative](/notes/img/gbn_operative.PNG)
+
+* The *Selective Repeat (SR)*  
+	* Avoids unnecessary retransmissions by having the sender retransmit only those that it suspects were lost or corrupted at the receiver
+	* A window size of *N* will again be used to limit unacknowledged packets in the pipeline
+	* However, unlike GBN, the sender will have already received ACKs for some of the packets in the window
+	* The receiver will acknowledge a correctly received packet regardless of whether it is in order or not
+	* The receiver *re-acknowledges* already-received packets with certain sequence *below* the window number
+	* No synchronization between sender and receiver
+![selected-repeat-1](/notes/img/selective_repeate_view.png)  
+
+![selected-repeat-2](/notes/img/SR_operative.png)
+
+## Flow Control vs. Congestion Control
+* Flow Control
+	* How much the user can handle
+	* Makes sure sender does not overload receiver by sending only enough data to accommodate receiver
+	* Initiated by sender
+* Congestion Control
+	* How much the network can handle
+	* Makes sure that the network can handle packet load
+	* Reduces amount of sent packets to avoid overflowing its buffer/queue
+	* Initiated by router
+
+## Exponential Math
+  **Tip: 2^5 = 32 && 2^10 = 1024**
+
+    | Unit | Value          |
+    | :--: | :-------:      |
+    | KB   | 2^10           |
+    | MB   | 2^20 = (2^10)^2|
+    | GB   | 2^30           |
+    | TB   | 2^40           |
+    | PB   | 2^50           |
