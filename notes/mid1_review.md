@@ -69,9 +69,10 @@ Status Code| Response| Meaning |
 
 ### MIME Types  
 **HTTP 1.0 also supports multi-parts and messages**
+
 Extension| Kind of Document| MIME Type |
 :--:            |:---:|:--:|
-.txt             | default text file | text/plain
+.txt            | default text file | text/plain
 . htm, . html   | HTML | text/html
 . *             | default for all other file types | application/octet-stream
 . gif           | GIF | image/gif
