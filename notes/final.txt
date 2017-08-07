@@ -1,0 +1,4 @@
+- August 9th, 1900 (7:00) - 2150 (9:50)
+- Final is expected to be cumulative
+- Topics from 2015: Overview, Collision, Hamming Coding, Routing, Internetworking, Extra
+- Expect some form of computation
