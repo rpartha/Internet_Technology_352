@@ -1,0 +1,76 @@
+
+Network:
+NodalDelay =
++ProcessingDelay:		delay in computing on protcol (checksum, figure out who to relay to, etc...)
++QueuingDelay:				delay in sending data out (wait because media is busy)
++TransmissionDelay		delay in getting data on to the medium (because it is not instantaneous)
++PropagationDelay		delay in information to propagate through the medium (negligable ... or really not)
+
+
+Transport:
+Circuit
+C: connection setup time (seconds)
+M: message size (bits)
+B: bandwidth (bits/second)
+
+C + M/B
+
+
+Packet
+M: message size (bits)
+B: bandwidth (bits/second)
+h: header size
+d: packet data size (payload)
+S: stations(hops)
+
+		((h+d)/B)  *  (ceil(M/d) +S  )
+
+
+
+*Message
+M: message size (bits)
+B: bandwidth (bits/second)
+h: header size
+d: packet data size (payload)
+S: stations(hops)
+
+		((h+M)/B)  *  (1 + S)
+
+
+
+
+
+110
+
+
+Go Back N:
+high upstream traffic
+minimal work on sender
+
+Selective Repeat:
+high downstream traffic
+more work on sender
+
+SeqNum:
+need to identify each packet
+- but -
+need to be unique to guard against ambiguity
+
+M
+
+
+011010100101
+^
+|
+buf
+
+write(fd, buf, 2)
+
+
+send: "hellocat"
+		8B Seq=0 hellocat   ->     hell
+										<-	4 win=0
+*wait*
+										<- 4 win=2
+													ll_ _
+		2B Seq=4 oc			->			lloc

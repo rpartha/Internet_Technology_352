@@ -1,0 +1,90 @@
+
+GET/index.html
+
+get/index.html
+
+
+get /index.html
+
+GE/index.html
+
+GE /index.html
+
+format:
+all caps
+space
+'/'
+unbroken text
+'\n'
+
+POST /index.html
+
+HEAD/indexes.html
+
+
+
+.../doc_root  <=> '/'
+
+.../doc_root/index.html
+.../doc_root/scripts/script.js
+
+'/index.html'
+GET /scripts/script.js
+
+String response = "";
+
+if ... bad:
+format										-> 400 Bad Request
+command (.equals("GET") )		-> 501 Not Implemented
+resource exist?							-> 404 Not Found   "GET /scripts/"
+whole resource read?				-> 500 Internal Error
+
+else ...
+200 OK
+
+.. resource...
+
+transmit  response...
+
+
+GET /.......
+
+
+
+
+--------------------------------------
+
+
+2^40
+
+1K -> 2^10
+1M
+1G
+1T -> 2^40
+
+4*1K => 4*2^10 => 2^2 * 2^10 => 2^12
+
+2^40 / 2^12 => 2^28
+
+
+
+P(A)
+
+P(A)+(1-P(A)) = 1
+
+P(U_x) = 0.10
+
+
+.1 .1 .1 .1 .1 .1 .1 .1 .1 .1 .9 .9 .9 .9 .9 .9 .9 ...
+.1 .1 .1 .1 .1 .1 .1 .1 .1 .1 .1 .9 .9 .9 .9 .9 .9  ...
+.1 .1 .1 .1 .1 .1 .1 .1 .1 .1 .1 .1 .9 .9 .9 .9 .9  ...
+
+
+Nodal delay:
+Proc.	= 40*2
+Queue.	= 0
+Trans.	= (1500*8) / 100Mbps
+				1500*8 / 10^8 => 120 us => .000120 seconds
+Prop.	=
+
+		2.5 us => .0000025

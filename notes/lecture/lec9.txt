@@ -1,0 +1,105 @@
+
+Exam0:
+mean:		83.89 pts
+				73.59%
+
+stdev:		0.1155
+max:		110 pts
+min:			44 pts
+
+midpoint:	77 pts
+
+
+
+--------------
+
+
+Routing:
+
+graph .. finding a path through a graph
+	nodes: routers/hosts
+	edges: links
+
+	weight: cost ($/time/bandwidth ... whatever you care about)
+
+Shortest Path:
+Dijkstra's shortest path algo:
+- globally optimal paths
+- but lots of traffic/messaging to build it
+- and only globally optimal as long as the network does not change (is a snapshot)
+
+Distance Vector:
+Ask neighbors for their route table, add your cost to get to each neighbor to their best routes, add minimal routes to your table ... every so often, tell your neighbors your routing table
+- pretty good paths
+- fairly little traffic
+- fairly easy to update
+danger:
+- cycles (node A has a route to node C through node B - node B stops seeing C - A tells B it has a link to C (but doesn't tell it the link is THROUGH B) )
+   (aka Count to Infinity)
+- add infinity to lost links (everyone who tries to reroute through that node will see infinity - so everyone will eventually know that node is out)
+
+
+-----------------
+
+
+
+Error detection:
+
+Checksum
+- take a bit segment
+- determine summand to make data+summand == 0
+- send both
+- if other side gets any 1s ... know there was a bit error
+problems?:
+- doubles data sent - send both data and its checksum (which is the same size |8^O)
+- sending checksum over SAME noisy channel ... may get errors in checksum, which math out to 1s and cause me to declare errors in data (even if there are none)
+- super scary secret problem X: bit errors correspond in the data AND checksum to make sum work out to 0s ... but the data IS still wrong
+
+Parity:
+- take bit segment
+- sum number of 1s
+- add a parity bit to make the number of 1s either even or odd (based on even or odd parity)
+- on other side, determine number of 1s
+	- if number of 1s matches with parity .. ok
+	- else .. error!
+- still suffers from false negative with two bit flips of a 1 and 0, BUT only costs 1 bit rather than message size (for checksum)
+
+Hamming Codes:
+~ lg(M) check bits
+- intersperse check bits and message bits
+- reserve power of 2 message bit locations up to log(M) for check bits
+- compute parity over message bits that involve each of the powers of 2
+- store those parity bits at the message location that corresponds to that power of 2
+	(i.e. store parity of odd message bits at location 2^0)
+
+
+0101
+
+2^0  2^1 2^2
+
+
+_	_	0	_	1	0	1
+1	2	3	4	5	6	7
+
+
+							4		2		1
+						3:	0		1		1
+						5: 1		0		1
+						6:	1		1		0
+						7:	1		1		1
+Even parity:		0		1		0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

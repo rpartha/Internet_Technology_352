@@ -1,0 +1,46 @@
+
+Midterm:
+up to (at least) TCP/UDP P1
+(weak on Transport)
+content + qualitative (use, better/worse)
+project (HTTP, socket) info too
+vocabulary (terms)
+organizations (ISO OSI, client/server, P2P, circuit/packet/message)
+
+
+base: what is the stuff
+comparitive/slotting: what does the stuff do
+mastery/optimization: good idea? bad idea? how does X affect Y?
+
+
+
+---------------------------
+
+
+
+HTTP - HyperText Transfer Protocol
+
+FTP - File Transfer Protocol
+
+SMTP - Simple Mail Transfer Protocol
+
+- request/response
+
+connection symantic:
+SMTP			FTP				HTTP
+ YES		    Y:7	N:?		Y:8	N:?
+					-/
+
+GET /index.html HTTP/1.0
+
+
+---------------------------
+
+
+Transport Layer:
+
+TCP: (connection-oriented)
+reliable
+in order
+flow control
+congestion control

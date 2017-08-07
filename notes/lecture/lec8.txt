@@ -1,0 +1,77 @@
+
+P2P:
+- build an overlay network between users (peers) instead of going to a single, centralized server for everything
+
+reasons:
+- scalability
+- reliability
+- physical/network distribution
+..
+- 'fairness'
+
+functions:
+Join
+Publish
+Search
+Fetch
+
+- Centralized Index \ Distributed Data - Napster, BitTorrent
+- Distributed Index \ Distributed Data - Gnutella, Chord
+
+Broadcast Lookup:
+Each Node
+- discover neighbors
+- ask neighbor for resource
+	- if they don't have it
+		- they recursively flood their neighbors
+
+Hierarchecal Lookup:
+Segment Nodes...
+Super Node
+- special node that has enough bandwidth/resources to handle high traffic
+- broadcast/flood lookups to other super nodes only
+Regular Node
+- Derp
+- send requests to nearest super node
+
+Distributed Index
+.. distribute function used to compute key value
+.. tie key value to node ID
+client can calculate key itself .. then needs to find the node who stores that key
+knows about one other neighbor .. successor
+
+Chord (~Distributed Hash Table)
+O(lg(n)) storage per node
+O(lg(n)) hops per lookup
+
+
+
+----------------------------------
+
+
+
+subs:
+2	4	5	6
+1	1	0	>1
+
+
+
+
+200.8.4.24/24
+
+255.255.255.66
+
+11111111.11111111.11111111.01000010
+2
+64
+66
+
+
+IP X
+
+200.8.0.0/16
+200.8.4.0/24
+200.8.4.24/30
+
+
+111111---.11111110.00000000

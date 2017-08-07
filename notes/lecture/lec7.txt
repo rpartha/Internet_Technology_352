@@ -1,0 +1,135 @@
+
+HTTP/1.0 200 OK <CRLF>
+<CRLF>
+
+"HTTP/1.0 200 OK"+'\r'+'\n' + '\r'+'\n'
+
+
+
+HTTP/1.0 200 OK <CRLF>
+Expires: .... <CRLF>
+<CRLF>
+
+"HTTP/1.0 200 OK"+'\r'+'\n'+"Expires: ..." + '\r'+'\n' + '\r'+'\n'
+
+HTTP/1.0 200 OK <CRLF>
+Expires: .... <CRLF>
+<CRLF>
+dslksjlsdfslksdffsl
+
+
+
+HTTP/1.0 304 Not Modified <CRLF>
+<CRLF>
+
+
+HTTP/1.0 200 OK <CRLF>
+Expires: .... <CRLF>
+<CRLF>
+dslksjlsdfslksdffsl
+<CRLF>
+
+
+
+
+------------------
+
+
+
+
+POST
+.... .cgi
+
+
+GET /script.cgi?a=2&v=12&name=me HTTP/1.0
+
+POST /script.cgi HTTP/1.0
+a=2
+v=12
+name=me
+
+
+/ug/users/home/me/dumbclass/doc_root/script.cgi
+
+File .. "." .getAbsolutePath()
+
+String doc_root = "/ug/users/home/me/dumbclass/doc_root";
+
+Process runstuff = Runtime.getRuntime().exec(doc_root+resource);
+
+
+ cost=2&value=12&name=me
+
+ int cost = atoi( input[0] )
+
+
+
+ ---------------------
+
+
+
+ (weight*mean( Assts )) +  (weight*(Exam0/total)) + (weight*(Exam1/total))
+
+ half-grade ~5pts
+ full grade ~10pts
+
+ above mean = good
+ >= 75% points = v.v.good
+
+ 50-55%
+
+
+
+ ----------------------
+
+
+ Why does opening a carbonated beverage cool it down?
+
+
+PV = nRT
+
+
+----------------------
+
+0 1 2 3 4 5 6 7 8 9
+
+A XOR B = C
+
+1001 A
+0101 B
+1100 C
+
+A XOR C ?= B
+B XOC C ?= A
+
+
+
+
+
+if myid < n < keyid
+	id is on node n
+else
+	my successor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

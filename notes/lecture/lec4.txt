@@ -1,0 +1,81 @@
+
+String response = "";
+response = in.readLine();
+
+if( !response.equals("") )
+{
+
+	//switch...
+	if( response.equals("200 OK");
+	{
+		... response = in.readLine();
+		message = in.readLine();
+	}
+
+}
+
+
+
+
+-----------------
+
+*
+POST /index.html HTTP/1.0
+If-Modified-Since: .......
+*
+
+recc:
+- add version footer to requests
+- separate function to build 1.0 header elements
+	- function to determine MIME type from resource name... (etc)
+		(content-length ... etc...)
+- add HEAD command to ONLY respond with status code and header
+(implement timeout if you didn't implement earlier)
+
+
+-------------------
+
+
+GET /index.html  HTTP/1.0
+
+JUMPUPANDDOWN /index.html HTTP/0.8
+
+POST /index.html HTTP/0.8
+
+
+nPr
+C <> R
+
+
+
+
+POST http://amazon.com/buystuff.html  HTTP/99.0
+Cookie: ....
+
+
+( (lambda x.(+ x 1)) 3)
+(+ 3 1)
+
+
+ (lambda x.(+ x 1))
+
+
+ www.somesite.com/animalsearch?a=monkeys&f=banana
+((lambda x y.(www.somesite.com/animalsearch?a=x&f=y) monkeys)banana)
+
+
+-----------------------
+
+
+ 503
+ 500
+
+ 5 => threads <= 50
+
+
+-----------------------
+
+a: 5GHz - "2Mbps"
+b: 2.4GHz - 11Mbps
+g: b 2.4GHz (for data)   \
+    a 5GHz (for control)   /  ==> 54Mbps

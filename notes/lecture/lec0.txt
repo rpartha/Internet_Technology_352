@@ -1,0 +1,63 @@
+
+John-Austen Francisco
+deymious@gmail.com
+
+host - machine that runs applications
+router - machine that relays traffic
+
+channel - logical information path
+media - physical information path
+
+edge - segment that relays traffic to/from hosts
+core - segment that relays traffic to/from the edge
+
+network - group of hosts and routers that support their communication
+internetwork - group of networks and the core that supports their communication ... a 'network of networks'
+
+
+"The" Internet - global TCP/IP internetwork
+
+
+Layers - object-orientated view of splitting up networking
+ISO OSI 7-layer stack: (canonical)
+Application
+Presentation
+Session
+Transport
+Network
+Data Link
+Physical
+
+Abbreviated 4-layer stack: (vulgate(common usage))
+Application (App, Pres, Sess)
+Transport
+Networking
+Host-to-Host (DL, PHY)
+
+The Metadata and Data for higher layers becomes the Data for a lower layer
+- on send each layer adds its own metadata to data from upper and pushes it down
+- on recv each layer peels off its metadata and pushes only the data up
+
+
+
+--------
+
+client:
+
+Socket connectionSocket = new Socket( <IP>, <port>);
+PrintWriter socketOut = new PrintWriter(connectionSocket.getOutputStream());
+BufferedReader socketIn = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+
+socketOut.println("Hallo!");
+String serverResponse = socketIn.readLine();
+
+
+server:
+ServerSocket connectionsIn = new ServerSocket(9000);
+Socket newClient = connectionsIn.accept();
+
+PrintWriter clientOut = new PrintWriter(newClient.getOutputStream());
+BufferedReader clientIn = new BufferedReader(new InputStreamReader(newClient.getInputStream()));
+
+clientIn.readLine();
+clientOut.println("No pages for you!");

@@ -1,0 +1,24 @@
+
+
+
+....+'\n'
+....+'\r'+'\n'
+
++'\n'
++"\n"
+
+....."+'a'
+....."+"a"
+
+
+
+dnodal = d_proc + d_Q + d_trans + d_prop
+
+0123456789
+sssss
+xr r r r
+s
+
+012345
+r r r r r
+aaaaa

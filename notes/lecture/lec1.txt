@@ -1,0 +1,76 @@
+
+CR/LF  ~> '\n'
+
+
+iusiudsfiushsdfkusdfu(CR/LF)
+
+
+//java EchoClient 172.168.1.3 48234
+java EchoClient basic.cs.rutgers.edu 48234
+Message to send:
+> hello
+Server response:
+> HELLO
+(return...)
+
+
+---------------------------
+
+host - 'anything' that hooks up to the Internet
+		- endpoint in a network
+		- 'edge' of a network
+		- identified by IP address ... (and port)
+		- a machine connected to the network that runs applications
+
+edge - contains hosts running applications (used by users)
+core - elements that support/relay/route/switch traffic for the edge (no applications, no users)
+
+IP address - Internetworking Protcol address ... 'name' of a host/network endpoint in the Internet
+port - abstraction used to disambiguate applications running on a host (who ought to get the message)
+
+
+
+ISO OSI stack (7 layers)
+
+Application
+Presenation
+Session
+Transport
+Network
+Data Link
+Physical (PHY)
+
+
+Somewhat less complete but workable abbreviated stack:
+Application - (Application, Presentation, Session)
+Transport
+Network
+Host-to-PHY (DL/PHY)
+
+TCP v UDP - Transport (Message transmission)
+TCP - lotsa stuff
+UDP - provide ports (yay?)
+
+IP - Internetworking Protocol - Network (Routing ... pick which machine to give info to in order to get the information to the intended destination)
+
+
+-----------------------------------
+
+2^5: 32
+2^10: 1024
+
+1KB: 2^10
+1MB: 2^20 -> 2^10  * 2^10
+1GB: 2^30
+1TB: 2^40
+1PB: 2^50
+
+1KB / ks -> (2^10) bytes / (10^3) seconds
+
+256MB  2^8 * 2^20 -> 2^28
+4MB/s -> 2^2 * 2^20
+
+2^8 / 2^2 -> 2^6 -> 64
+
+
+----------------------------------
